@@ -56,6 +56,10 @@ class LoginActivity : AppCompatActivity() {
                     // If sign in fails, display a message to the user.
                     Toast.makeText(this@LoginActivity,"User does not exist",Toast.LENGTH_SHORT).show()
                 }
+                if(email.isEmpty() || password.isEmpty())
+                {
+                    Toast.makeText(this@LoginActivity,"Empty Fields",Toast.LENGTH_SHORT).show()
+                }
             }
     }
 }
