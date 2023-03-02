@@ -37,8 +37,15 @@ class LoginActivity : AppCompatActivity() {
         btnLogin.setOnClickListener {
             val email = edtEmail.text.toString()
             val password = edtPassword.text.toString()
+            if(email.isEmpty() || password.isEmpty())
+            {
+                Toast.makeText(this@LoginActivity,"Empty Fields",Toast.LENGTH_SHORT).show()
+            }
+            else{
+                login(email, password) //login function called
+            }
 
-            login(email, password) //login function called
+
         }
 
     }
@@ -56,10 +63,7 @@ class LoginActivity : AppCompatActivity() {
                     // If sign in fails, display a message to the user.
                     Toast.makeText(this@LoginActivity,"User does not exist",Toast.LENGTH_SHORT).show()
                 }
-                if(email.isEmpty() || password.isEmpty())
-                {
-                    Toast.makeText(this@LoginActivity,"Empty Fields",Toast.LENGTH_SHORT).show()
-                }
+
             }
     }
 }
